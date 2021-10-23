@@ -470,7 +470,7 @@ $P{PARAM_CD_EMPRESA},
 					<font size="12" isBold="true"/>
 					<paragraph rightIndent="10"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Total Geral"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Total Geral:"]]></textFieldExpression>
 			</textField>
 			<rectangle>
 				<reportElement mode="Opaque" x="410" y="0" width="47" height="30" backcolor="#C9C9C9" uuid="7e25c145-0d58-4046-aeaf-319e98e288f6"/>
