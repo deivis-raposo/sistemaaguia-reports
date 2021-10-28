@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_Extrato_Movimento_Combustivel_Produto" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dc779a30-e8a6-40b7-b87e-9d70df7a1da4">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DB_Aguia"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<style name="cabecalho_detail" mode="Opaque" forecolor="#030303" backcolor="#C9C9C9" hTextAlign="Center" vTextAlign="Middle" fontName="Tahoma" fontSize="10" isBold="true">
 		<pen lineWidth="1.0" lineStyle="Solid" lineColor="#000066"/>
@@ -250,7 +250,7 @@ $P{PARAM_CD_EMPRESA},
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Tahoma" size="16" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Relatório: Extrato Movimento Combustível ]]></text>
+				<text><![CDATA[Relatório: Extrato Movimento Combustíveis]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="0" width="555" height="28" uuid="65b872c4-62ea-481a-8542-6cd5e0270d2a"/>

@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_Extrato_MovimentoCombustivel" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cc319fce-9e8e-4c5e-a12e-49538ba47407">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DB_Aguia"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
 	<style name="cabecalho_detail" mode="Opaque" forecolor="#030303" backcolor="#C9C9C9" hTextAlign="Center" vTextAlign="Middle" fontName="Tahoma" fontSize="10" isBold="true">
 		<pen lineWidth="1.0" lineStyle="Solid" lineColor="#000066"/>
 		<box>
@@ -373,7 +373,7 @@ order by num_tanque asc]]>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Tahoma" size="16" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Relatório: Extrato Movimento Combustível ]]></text>
+				<text><![CDATA[Relatório: Extrato Movimento Combustíveis]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="0" width="555" height="28" uuid="1f530997-595e-41c3-be52-c60a1e0e0f4a"/>
@@ -619,7 +619,7 @@ order by num_tanque asc]]>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$F{VOLUME_RECEBIDO}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField pattern=" #,##0.00; -#,##0.00">
 				<reportElement x="200" y="0" width="69" height="30" uuid="8b53db6a-890e-4f50-a216-107df34015f8">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="01b812e0-2a7f-49e6-a938-2eaba490feca"/>
 				</reportElement>
