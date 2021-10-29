@@ -231,6 +231,9 @@ $P{PARAM_CD_EMPRESA},
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{desc_prod1}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -243,6 +246,9 @@ $P{PARAM_CD_EMPRESA},
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{desc_prod2}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -255,6 +261,9 @@ $P{PARAM_CD_EMPRESA},
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{desc_prod3}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -267,6 +276,9 @@ $P{PARAM_CD_EMPRESA},
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{desc_prod4}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -279,6 +291,9 @@ $P{PARAM_CD_EMPRESA},
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{desc_prod5}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
@@ -290,6 +305,9 @@ $P{PARAM_CD_EMPRESA},
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{desc_prod6}]]></textFieldExpression>
 			</textField>
 			<staticText>
@@ -305,7 +323,7 @@ $P{PARAM_CD_EMPRESA},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="SansSerif" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total Dia]]></text>
 			</staticText>
@@ -319,6 +337,9 @@ $P{PARAM_CD_EMPRESA},
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
 				<text><![CDATA[Data]]></text>
 			</staticText>
 		</band>
@@ -437,7 +458,7 @@ $P{PARAM_CD_EMPRESA},
 	<summary>
 		<band height="30" splitType="Stretch">
 			<staticText>
-				<reportElement mode="Opaque" x="0" y="0" width="64" height="30" backcolor="#E6E6E6" uuid="9cffe2b0-6d5f-4313-b1b6-9dc9ba06d618"/>
+				<reportElement mode="Opaque" x="0" y="0" width="64" height="30" backcolor="#DCDCDC" uuid="9cffe2b0-6d5f-4313-b1b6-9dc9ba06d618"/>
 				<box leftPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -445,85 +466,99 @@ $P{PARAM_CD_EMPRESA},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font size="11" isBold="true"/>
+					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total Geral]]></text>
 			</staticText>
 			<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-				<reportElement mode="Opaque" x="64" y="0" width="70" height="30" backcolor="#E6E6E6" uuid="31cf05de-44ea-44f9-94a3-0611ac711faf"/>
+				<reportElement mode="Opaque" x="64" y="0" width="70" height="30" backcolor="#DCDCDC" uuid="31cf05de-44ea-44f9-94a3-0611ac711faf"/>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{qtd_prod11}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-				<reportElement mode="Opaque" x="134" y="0" width="70" height="30" backcolor="#E6E6E6" uuid="0ae7d649-d701-4704-866a-e1c84c72c571"/>
+				<reportElement mode="Opaque" x="134" y="0" width="70" height="30" backcolor="#DCDCDC" uuid="0ae7d649-d701-4704-866a-e1c84c72c571"/>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{qtd_prod21}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-				<reportElement mode="Opaque" x="204" y="0" width="70" height="30" backcolor="#E6E6E6" uuid="c184049e-a8a1-45ae-ac74-15db84ac3221"/>
+				<reportElement mode="Opaque" x="204" y="0" width="70" height="30" backcolor="#DCDCDC" uuid="c184049e-a8a1-45ae-ac74-15db84ac3221"/>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{qtd_prod31}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-				<reportElement mode="Opaque" x="274" y="0" width="70" height="30" backcolor="#E6E6E6" uuid="e440fcb6-8b12-448e-98a1-10570ae8820d"/>
+				<reportElement mode="Opaque" x="274" y="0" width="70" height="30" backcolor="#DCDCDC" uuid="e440fcb6-8b12-448e-98a1-10570ae8820d"/>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{qtd_prod41}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-				<reportElement mode="Opaque" x="344" y="0" width="70" height="30" backcolor="#E6E6E6" uuid="a24267f6-1963-4792-835b-f48d00126787"/>
+				<reportElement mode="Opaque" x="344" y="0" width="70" height="30" backcolor="#DCDCDC" uuid="a24267f6-1963-4792-835b-f48d00126787"/>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{qtd_prod51}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-				<reportElement mode="Opaque" x="414" y="0" width="55" height="30" backcolor="#E6E6E6" uuid="6b179993-b9dc-40cf-a784-c9892ab9b640"/>
+				<reportElement mode="Opaque" x="414" y="0" width="55" height="30" backcolor="#DCDCDC" uuid="6b179993-b9dc-40cf-a784-c9892ab9b640"/>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{qtd_prod61}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-				<reportElement mode="Opaque" x="469" y="0" width="86" height="30" backcolor="#E6E6E6" uuid="bd965158-b9e6-4684-8b46-893f64bdf885"/>
+				<reportElement mode="Opaque" x="469" y="0" width="86" height="30" backcolor="#DCDCDC" uuid="bd965158-b9e6-4684-8b46-893f64bdf885"/>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{qtd_total1}]]></textFieldExpression>
 			</textField>
 		</band>

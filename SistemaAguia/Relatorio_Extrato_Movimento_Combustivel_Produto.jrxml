@@ -173,7 +173,7 @@ $P{PARAM_CD_EMPRESA},
 			<band height="35">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<textField textAdjust="ScaleFont">
-					<reportElement mode="Opaque" x="0" y="0" width="130" height="30" backcolor="#E6E6E6" uuid="f2031b94-7819-4d3c-a30b-3b10ef177938">
+					<reportElement mode="Opaque" x="0" y="0" width="130" height="30" backcolor="#DCDCDC" uuid="f2031b94-7819-4d3c-a30b-3b10ef177938">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="abbd4f05-5aaf-410f-b458-81c87e76c52d"/>
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
@@ -191,7 +191,7 @@ $P{PARAM_CD_EMPRESA},
 					<textFieldExpression><![CDATA["Total  " + $F{DESC_PRODUTO}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" pattern=" #,##0.##; -#,##0.##">
-					<reportElement mode="Opaque" x="130" y="0" width="70" height="30" backcolor="#E6E6E6" uuid="6707f2d6-d484-43b4-bc27-f5263b5c260e"/>
+					<reportElement mode="Opaque" x="130" y="0" width="70" height="30" backcolor="#DCDCDC" uuid="6707f2d6-d484-43b4-bc27-f5263b5c260e"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -202,7 +202,7 @@ $P{PARAM_CD_EMPRESA},
 					<textFieldExpression><![CDATA[$V{VOLUME_RECEBIDO1}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-					<reportElement mode="Opaque" x="200" y="0" width="70" height="30" backcolor="#E6E6E6" uuid="b1c80edf-fe64-48ff-9603-9ca02d7718cd"/>
+					<reportElement mode="Opaque" x="200" y="0" width="70" height="30" backcolor="#DCDCDC" uuid="b1c80edf-fe64-48ff-9603-9ca02d7718cd"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -213,7 +213,7 @@ $P{PARAM_CD_EMPRESA},
 					<textFieldExpression><![CDATA[$V{VOLUME_VENDIDO1}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-					<reportElement mode="Opaque" x="270" y="0" width="59" height="30" backcolor="#E6E6E6" uuid="2f5a2b64-349a-4ab9-9227-65ffd6b8ea22"/>
+					<reportElement mode="Opaque" x="270" y="0" width="59" height="30" backcolor="#DCDCDC" uuid="2f5a2b64-349a-4ab9-9227-65ffd6b8ea22"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -224,7 +224,7 @@ $P{PARAM_CD_EMPRESA},
 					<textFieldExpression><![CDATA[$V{AFERICAO1}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-					<reportElement mode="Opaque" x="482" y="0" width="73" height="30" backcolor="#E6E6E6" uuid="8eefb19a-b3f2-4965-9096-55b3504dd2a9"/>
+					<reportElement mode="Opaque" x="482" y="0" width="73" height="30" backcolor="#DCDCDC" uuid="8eefb19a-b3f2-4965-9096-55b3504dd2a9"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -235,7 +235,7 @@ $P{PARAM_CD_EMPRESA},
 					<textFieldExpression><![CDATA[$V{DIFERENCA1}]]></textFieldExpression>
 				</textField>
 				<rectangle>
-					<reportElement x="329" y="0" width="153" height="30" backcolor="#E6E6E6" uuid="e43223c1-be91-488e-8023-ca16f57cb560"/>
+					<reportElement x="329" y="0" width="153" height="30" backcolor="#DCDCDC" uuid="e43223c1-be91-488e-8023-ca16f57cb560"/>
 				</rectangle>
 			</band>
 		</groupFooter>
@@ -345,7 +345,7 @@ $P{PARAM_CD_EMPRESA},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font fontName="SansSerif" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Data]]></text>
 			</staticText>
@@ -360,7 +360,7 @@ $P{PARAM_CD_EMPRESA},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font fontName="SansSerif" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Estoque Inicial]]></text>
 			</staticText>
@@ -375,7 +375,7 @@ $P{PARAM_CD_EMPRESA},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font fontName="SansSerif" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Entrada]]></text>
 			</staticText>
@@ -390,7 +390,7 @@ $P{PARAM_CD_EMPRESA},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font fontName="SansSerif" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Aferição]]></text>
 			</staticText>
@@ -405,7 +405,7 @@ $P{PARAM_CD_EMPRESA},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font fontName="SansSerif" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Estoque Contabil]]></text>
 			</staticText>
@@ -420,7 +420,7 @@ $P{PARAM_CD_EMPRESA},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font fontName="SansSerif" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Estoque Fisico ]]></text>
 			</staticText>
@@ -435,7 +435,7 @@ $P{PARAM_CD_EMPRESA},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font fontName="SansSerif" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Diferença]]></text>
 			</staticText>
@@ -450,7 +450,7 @@ $P{PARAM_CD_EMPRESA},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font fontName="SansSerif" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Venda ]]></text>
 			</staticText>

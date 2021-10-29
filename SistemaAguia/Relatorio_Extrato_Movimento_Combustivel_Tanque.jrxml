@@ -190,7 +190,7 @@ order by num_tanque asc]]>
 			<band height="35">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<textField textAdjust="ScaleFont">
-					<reportElement mode="Opaque" x="0" y="0" width="130" height="30" backcolor="#E6E6E6" uuid="05855567-9b19-47cc-b420-92878869cb60">
+					<reportElement mode="Opaque" x="0" y="0" width="130" height="30" backcolor="#DCDCDC" uuid="05855567-9b19-47cc-b420-92878869cb60">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="abbd4f05-5aaf-410f-b458-81c87e76c52d"/>
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
@@ -208,7 +208,7 @@ order by num_tanque asc]]>
 					<textFieldExpression><![CDATA["Total  " + $F{DESC_PRODUTO}]]></textFieldExpression>
 				</textField>
 				<textField pattern=" #,##0.##; -#,##0.##">
-					<reportElement mode="Opaque" x="130" y="0" width="70" height="30" backcolor="#E6E6E6" uuid="bf5d94c1-afc5-4af6-9c6c-1bddfa2ef014"/>
+					<reportElement mode="Opaque" x="130" y="0" width="70" height="30" backcolor="#DCDCDC" uuid="bf5d94c1-afc5-4af6-9c6c-1bddfa2ef014"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -219,7 +219,7 @@ order by num_tanque asc]]>
 					<textFieldExpression><![CDATA[$V{VOLUME_RECEBIDO1}]]></textFieldExpression>
 				</textField>
 				<textField pattern=" #,##0.00; -#,##0.00">
-					<reportElement mode="Opaque" x="200" y="0" width="69" height="30" backcolor="#E6E6E6" uuid="20cf6b87-f1d4-4e9c-872b-6ed4be75722e"/>
+					<reportElement mode="Opaque" x="200" y="0" width="69" height="30" backcolor="#DCDCDC" uuid="20cf6b87-f1d4-4e9c-872b-6ed4be75722e"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -230,7 +230,7 @@ order by num_tanque asc]]>
 					<textFieldExpression><![CDATA[$V{VOLUME_VENDIDO2}]]></textFieldExpression>
 				</textField>
 				<textField pattern=" #,##0.00; -#,##0.00">
-					<reportElement mode="Opaque" x="269" y="0" width="60" height="30" backcolor="#E6E6E6" uuid="30a361c2-e99f-4ae8-b6a1-35c4877576d3"/>
+					<reportElement mode="Opaque" x="269" y="0" width="60" height="30" backcolor="#DCDCDC" uuid="30a361c2-e99f-4ae8-b6a1-35c4877576d3"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -241,7 +241,7 @@ order by num_tanque asc]]>
 					<textFieldExpression><![CDATA[$V{AFERICAO1}]]></textFieldExpression>
 				</textField>
 				<textField pattern=" #,##0.00; -#,##0.00">
-					<reportElement mode="Opaque" x="481" y="0" width="74" height="30" backcolor="#E6E6E6" uuid="cc148531-b488-4370-8842-c8f37b368647"/>
+					<reportElement mode="Opaque" x="481" y="0" width="74" height="30" backcolor="#DCDCDC" uuid="cc148531-b488-4370-8842-c8f37b368647"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -252,7 +252,7 @@ order by num_tanque asc]]>
 					<textFieldExpression><![CDATA[$V{DIFERENCA2}]]></textFieldExpression>
 				</textField>
 				<rectangle>
-					<reportElement x="329" y="0" width="152" height="30" backcolor="#E6E6E6" uuid="56df3b08-3bf4-483e-b48d-acd4a5f3433b"/>
+					<reportElement x="329" y="0" width="152" height="30" backcolor="#DCDCDC" uuid="56df3b08-3bf4-483e-b48d-acd4a5f3433b"/>
 				</rectangle>
 			</band>
 		</groupFooter>
@@ -296,7 +296,7 @@ order by num_tanque asc]]>
 			<band height="35">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<textField pattern=" #,##0.##; -#,##0.##">
-					<reportElement mode="Opaque" x="130" y="0" width="70" height="30" backcolor="#E6E6E6" uuid="bff042a0-bb47-4b3b-a7b3-be93c9ff8690"/>
+					<reportElement mode="Opaque" x="130" y="0" width="70" height="30" backcolor="#DCDCDC" uuid="bff042a0-bb47-4b3b-a7b3-be93c9ff8690"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -307,7 +307,7 @@ order by num_tanque asc]]>
 					<textFieldExpression><![CDATA[$V{VOLUME_RECEBIDO2}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont">
-					<reportElement mode="Opaque" x="0" y="0" width="130" height="30" backcolor="#E6E6E6" uuid="da8d50d6-df3a-47cf-a6b3-0bfb51f52752">
+					<reportElement mode="Opaque" x="0" y="0" width="130" height="30" backcolor="#DCDCDC" uuid="da8d50d6-df3a-47cf-a6b3-0bfb51f52752">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="abbd4f05-5aaf-410f-b458-81c87e76c52d"/>
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
@@ -325,7 +325,7 @@ order by num_tanque asc]]>
 					<textFieldExpression><![CDATA["Total tanque:  " + $F{num_tanque}]]></textFieldExpression>
 				</textField>
 				<textField pattern=" #,##0.00; -#,##0.00">
-					<reportElement mode="Opaque" x="200" y="0" width="69" height="30" backcolor="#E6E6E6" uuid="9a53b765-8fa4-49da-a835-9bf649223338"/>
+					<reportElement mode="Opaque" x="200" y="0" width="69" height="30" backcolor="#DCDCDC" uuid="9a53b765-8fa4-49da-a835-9bf649223338"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -336,7 +336,7 @@ order by num_tanque asc]]>
 					<textFieldExpression><![CDATA[$V{VOLUME_VENDIDO1}]]></textFieldExpression>
 				</textField>
 				<textField pattern=" #,##0.00; -#,##0.00">
-					<reportElement mode="Opaque" x="269" y="0" width="60" height="30" backcolor="#E6E6E6" uuid="434b5f40-4a08-4dba-8685-0804ab8a08e2"/>
+					<reportElement mode="Opaque" x="269" y="0" width="60" height="30" backcolor="#DCDCDC" uuid="434b5f40-4a08-4dba-8685-0804ab8a08e2"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -347,7 +347,7 @@ order by num_tanque asc]]>
 					<textFieldExpression><![CDATA[$F{AFERICAO}]]></textFieldExpression>
 				</textField>
 				<textField pattern=" #,##0.00; -#,##0.00">
-					<reportElement mode="Opaque" x="481" y="0" width="74" height="30" backcolor="#E6E6E6" uuid="62320b4f-2299-4c53-8b87-e4b34213887d"/>
+					<reportElement mode="Opaque" x="481" y="0" width="74" height="30" backcolor="#DCDCDC" uuid="62320b4f-2299-4c53-8b87-e4b34213887d"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -358,7 +358,7 @@ order by num_tanque asc]]>
 					<textFieldExpression><![CDATA[$V{DIFERENCA1}]]></textFieldExpression>
 				</textField>
 				<rectangle>
-					<reportElement x="329" y="0" width="152" height="30" backcolor="#E6E6E6" uuid="ca091d8c-9cae-4275-8b35-eec463222280"/>
+					<reportElement x="329" y="0" width="152" height="30" backcolor="#DCDCDC" uuid="ca091d8c-9cae-4275-8b35-eec463222280"/>
 				</rectangle>
 			</band>
 		</groupFooter>
@@ -467,7 +467,7 @@ order by num_tanque asc]]>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font fontName="SansSerif" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Data]]></text>
 			</staticText>
@@ -482,7 +482,7 @@ order by num_tanque asc]]>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font fontName="SansSerif" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Estoque Inicial]]></text>
 			</staticText>
@@ -497,7 +497,7 @@ order by num_tanque asc]]>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font fontName="SansSerif" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Entrada]]></text>
 			</staticText>
@@ -512,7 +512,7 @@ order by num_tanque asc]]>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font fontName="SansSerif" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Aferição]]></text>
 			</staticText>
@@ -527,7 +527,7 @@ order by num_tanque asc]]>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font fontName="SansSerif" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Estoque Contabil]]></text>
 			</staticText>
@@ -542,7 +542,7 @@ order by num_tanque asc]]>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font fontName="SansSerif" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Estoque Fisico ]]></text>
 			</staticText>
@@ -557,7 +557,7 @@ order by num_tanque asc]]>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font fontName="SansSerif" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Diferença]]></text>
 			</staticText>
@@ -572,7 +572,7 @@ order by num_tanque asc]]>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
+					<font fontName="SansSerif" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Venda ]]></text>
 			</staticText>

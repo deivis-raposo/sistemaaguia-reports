@@ -152,7 +152,7 @@ $P{PARAM_DT_FIM},
 			<band height="35">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<textField textAdjust="ScaleFont">
-					<reportElement mode="Opaque" x="0" y="0" width="198" height="30" backcolor="#E6E6E6" uuid="e059a863-9f35-4db0-84e3-1f3ef95add89">
+					<reportElement mode="Opaque" x="0" y="0" width="198" height="30" backcolor="#DCDCDC" uuid="e059a863-9f35-4db0-84e3-1f3ef95add89">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="abbd4f05-5aaf-410f-b458-81c87e76c52d"/>
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
@@ -170,7 +170,7 @@ $P{PARAM_DT_FIM},
 					<textFieldExpression><![CDATA["Total  " + $F{DESC_GRUPO_PRODUTO}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" pattern="#,##0.00#;#,##0.00#-">
-					<reportElement mode="Opaque" x="271" y="0" width="118" height="30" printWhenGroupChanges="Group1" backcolor="#E6E6E6" uuid="83490c35-3d1e-499a-beaf-33d18e2b484b">
+					<reportElement mode="Opaque" x="271" y="0" width="118" height="30" printWhenGroupChanges="Group1" backcolor="#DCDCDC" uuid="83490c35-3d1e-499a-beaf-33d18e2b484b">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 					</reportElement>
@@ -187,7 +187,7 @@ $P{PARAM_DT_FIM},
 					<textFieldExpression><![CDATA[$V{TOTAL_BRUTO_TABELA}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" pattern="#,##0.00#;#,##0.00#-">
-					<reportElement mode="Opaque" x="389" y="0" width="166" height="30" printWhenGroupChanges="Group1" backcolor="#E6E6E6" uuid="064a18c5-cce9-4ff0-887f-45fbade22408">
+					<reportElement mode="Opaque" x="389" y="0" width="166" height="30" printWhenGroupChanges="Group1" backcolor="#DCDCDC" uuid="064a18c5-cce9-4ff0-887f-45fbade22408">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 					</reportElement>
@@ -204,7 +204,7 @@ $P{PARAM_DT_FIM},
 					<textFieldExpression><![CDATA[$V{TOTAL_LIQUIDO_TABELA}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" pattern="#,##0.000;#,##0.000-">
-					<reportElement mode="Opaque" x="198" y="0" width="73" height="30" printWhenGroupChanges="Group1" backcolor="#E6E6E6" uuid="0d571447-3cef-48f9-99c0-da97dabb0c02">
+					<reportElement mode="Opaque" x="198" y="0" width="73" height="30" printWhenGroupChanges="Group1" backcolor="#DCDCDC" uuid="0d571447-3cef-48f9-99c0-da97dabb0c02">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 					</reportElement>
@@ -327,7 +327,7 @@ $P{PARAM_DT_FIM},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="SansSerif" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Código]]></text>
 			</staticText>
@@ -342,7 +342,7 @@ $P{PARAM_DT_FIM},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
-					<font isBold="true"/>
+					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Descrição Produtos / Serviços]]></text>
 			</staticText>
@@ -357,7 +357,7 @@ $P{PARAM_DT_FIM},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="SansSerif" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Un]]></text>
 			</staticText>
@@ -372,7 +372,7 @@ $P{PARAM_DT_FIM},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="SansSerif" isBold="true"/>
 				</textElement>
 				<text><![CDATA[P.M.V]]></text>
 			</staticText>
@@ -387,7 +387,7 @@ $P{PARAM_DT_FIM},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="SansSerif" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Valor Bruto]]></text>
 			</staticText>
@@ -402,7 +402,7 @@ $P{PARAM_DT_FIM},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="SansSerif" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Desc.]]></text>
 			</staticText>
@@ -417,7 +417,7 @@ $P{PARAM_DT_FIM},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="SansSerif" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Acrésc.]]></text>
 			</staticText>
@@ -432,7 +432,7 @@ $P{PARAM_DT_FIM},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="SansSerif" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Valor Líquido]]></text>
 			</staticText>
@@ -447,7 +447,7 @@ $P{PARAM_DT_FIM},
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="SansSerif" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Qtd]]></text>
 			</staticText>
