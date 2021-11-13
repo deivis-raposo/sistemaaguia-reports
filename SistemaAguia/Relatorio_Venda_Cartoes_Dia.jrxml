@@ -31,7 +31,7 @@
 		<defaultValueExpression><![CDATA["2021-01-01"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="PARAM_DT_FIM" class="java.lang.String">
-		<defaultValueExpression><![CDATA["2021-02-02"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["2021-11-02"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="PARAM_DT_FIM_FMT" class="java.lang.String">
 		<defaultValueExpression><![CDATA["31/01/2021"]]></defaultValueExpression>
@@ -40,12 +40,8 @@
 		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
 	</parameter>
 	<parameter name="PARAM_ADQUIRENTE" class="java.lang.String"/>
-	<parameter name="PARAM_TIPO_CARTAO" class="java.lang.Integer">
-		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
-	</parameter>
-	<parameter name="PARAM_SITUACAO" class="java.lang.Integer">
-		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
-	</parameter>
+	<parameter name="PARAM_TIPO_CARTAO" class="java.lang.Integer"/>
+	<parameter name="PARAM_SITUACAO" class="java.lang.Integer"/>
 	<queryString>
 		<![CDATA[sp_rel_venda_cartao_diaria
 $P{PARAM_CD_EMPRESA},
@@ -53,7 +49,7 @@ $P{PARAM_ADQUIRENTE},
 $P{PARAM_TIPO_CARTAO},
  $P{PARAM_DT_INICIO},
  $P{PARAM_DT_FIM},
- 0  ,
+ $P{PARAM_SITUACAO}  ,
  '']]>
 	</queryString>
 	<field name="cod_empresa" class="java.lang.Short">
