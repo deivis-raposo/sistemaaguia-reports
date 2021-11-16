@@ -31,7 +31,7 @@
 		<defaultValueExpression><![CDATA["2021-01-01"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="PARAM_DT_FIM" class="java.lang.String">
-		<defaultValueExpression><![CDATA["2021-11-02"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["2021-01-05"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="PARAM_DT_FIM_FMT" class="java.lang.String">
 		<defaultValueExpression><![CDATA["31/01/2021"]]></defaultValueExpression>
@@ -365,7 +365,7 @@ $P{PARAM_TIPO_CARTAO},
 		</band>
 	</title>
 	<pageHeader>
-		<band height="60" splitType="Stretch">
+		<band height="70" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="0" width="283" height="30" uuid="146db19a-96ec-4906-9c9a-212eeb2ea436"/>
 				<box padding="5"/>
@@ -411,21 +411,21 @@ $P{PARAM_TIPO_CARTAO},
 				</textElement>
 				<text><![CDATA[Relatório gerado em: ]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="443" y="30" width="73" height="30" uuid="998d96e7-e983-4960-b894-ad9cb53945e4"/>
-				<box leftPadding="10" bottomPadding="5"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="11"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Página: " + $V{PAGE_NUMBER}]]></textFieldExpression>
-			</textField>
 			<textField evaluationTime="Report">
-				<reportElement x="501" y="30" width="46" height="30" uuid="fffd485f-a7b4-4934-8452-54c8957f475c"/>
+				<reportElement x="501" y="30" width="46" height="30" uuid="517d886e-0340-4e08-b1ef-c86657820be8"/>
 				<box leftPadding="15" bottomPadding="5"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="30" width="73" height="30" uuid="d3034ec0-cc9e-4e52-9780-ed8afc9f2563"/>
+				<box leftPadding="10" bottomPadding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página: " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
@@ -516,17 +516,16 @@ $P{PARAM_TIPO_CARTAO},
 				<text><![CDATA[Valor Liquido]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="cabecalho_detail" x="486" y="0" width="69" height="30" uuid="48d5fd98-ad3d-419f-9314-29285082f182">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="174ecfee-58cd-46b2-8a54-985063577521"/>
+				<reportElement style="cabecalho_detail" x="486" y="0" width="69" height="30" uuid="d45e17ec-f2ca-4a4e-af6e-0bdee2a5d947">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0d8d1114-eae4-4e76-8455-c11035791e39"/>
 				</reportElement>
-				<box topPadding="8">
+				<box>
 					<topPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<textElement>
 					<font size="9" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Situação
-]]></text>
+				<text><![CDATA[Situação]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
