@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_Extrato_Movimento_Combustivel_Produto" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dc779a30-e8a6-40b7-b87e-9d70df7a1da4">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DB_Aguia.xml"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_Extrato_MovimentoCombustivel" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cc319fce-9e8e-4c5e-a12e-49538ba47407">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
 	<style name="cabecalho_detail" mode="Opaque" forecolor="#030303" backcolor="#C9C9C9" hTextAlign="Center" vTextAlign="Middle" fontName="Tahoma" fontSize="10" isBold="true">
 		<pen lineWidth="1.0" lineStyle="Solid" lineColor="#000066"/>
 		<box>
@@ -32,10 +32,14 @@
 		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[sp_rel_estoque_combustivel_por_produto
+		<![CDATA[sp_rel_estoque_combustivel
 $P{PARAM_CD_EMPRESA},
  $P{PARAM_DT_INICIO},
- $P{PARAM_DT_FIM}]]>
+ $P{PARAM_DT_FIM}
+ 
+ select  num_tanque
+from  sp_rel_estoque_combustivel
+order by num_tanque asc]]>
 	</queryString>
 	<field name="COD_EMPRESA" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="COD_EMPRESA"/>
@@ -52,6 +56,10 @@ $P{PARAM_CD_EMPRESA},
 	<field name="DESCRICAO_PDV" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="DESCRICAO_PDV"/>
 		<property name="com.jaspersoft.studio.field.label" value="DESCRICAO_PDV"/>
+	</field>
+	<field name="num_tanque" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="num_tanque"/>
+		<property name="com.jaspersoft.studio.field.label" value="num_tanque"/>
 	</field>
 	<field name="data_fechamento" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.name" value="data_fechamento"/>
@@ -97,36 +105,45 @@ $P{PARAM_CD_EMPRESA},
 		<property name="com.jaspersoft.studio.field.name" value="diasemana"/>
 		<property name="com.jaspersoft.studio.field.label" value="diasemana"/>
 	</field>
-	<variable name="VOLUME_RECEBIDO1" class="java.math.BigDecimal" resetType="Group" resetGroup="Group1" calculation="Sum">
+	<variable name="VOLUME_RECEBIDO1" class="java.math.BigDecimal" resetType="Group" resetGroup="produto" calculation="Sum">
 		<variableExpression><![CDATA[$F{VOLUME_RECEBIDO}]]></variableExpression>
 	</variable>
-	<variable name="VOLUME_VENDIDO1" class="java.math.BigDecimal" resetType="Group" resetGroup="Group1" calculation="Sum">
+	<variable name="VOLUME_RECEBIDO2" class="java.math.BigDecimal" resetType="Group" resetGroup="tanque" calculation="Sum">
+		<variableExpression><![CDATA[$F{VOLUME_RECEBIDO}]]></variableExpression>
+	</variable>
+	<variable name="VOLUME_VENDIDO1" class="java.math.BigDecimal" resetType="Group" resetGroup="tanque" calculation="Sum">
 		<variableExpression><![CDATA[$F{VOLUME_VENDIDO}]]></variableExpression>
 	</variable>
-	<variable name="AFERICAO1" class="java.math.BigDecimal" resetType="Group" resetGroup="Group1" calculation="Sum">
+	<variable name="VOLUME_VENDIDO2" class="java.math.BigDecimal" resetType="Group" resetGroup="produto" calculation="Sum">
+		<variableExpression><![CDATA[$F{VOLUME_VENDIDO}]]></variableExpression>
+	</variable>
+	<variable name="AFERICAO1" class="java.math.BigDecimal" resetType="Group" resetGroup="produto" calculation="Sum">
 		<variableExpression><![CDATA[$F{AFERICAO}]]></variableExpression>
 	</variable>
-	<variable name="DIFERENCA1" class="java.math.BigDecimal" resetType="Group" resetGroup="Group1" calculation="Sum">
+	<variable name="DIFERENCA1" class="java.math.BigDecimal" resetType="Group" resetGroup="tanque" calculation="Sum">
 		<variableExpression><![CDATA[$F{DIFERENCA}]]></variableExpression>
 	</variable>
-	<variable name="VOLUME_RECEBIDO2" class="java.math.BigDecimal" calculation="Sum">
+	<variable name="DIFERENCA2" class="java.math.BigDecimal" resetType="Group" resetGroup="produto" calculation="Sum">
+		<variableExpression><![CDATA[$F{DIFERENCA}]]></variableExpression>
+	</variable>
+	<variable name="VOLUME_RECEBIDO3" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{VOLUME_RECEBIDO}]]></variableExpression>
 	</variable>
-	<variable name="VOLUME_VENDIDO2" class="java.math.BigDecimal" calculation="Sum">
+	<variable name="VOLUME_VENDIDO3" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{VOLUME_VENDIDO}]]></variableExpression>
 	</variable>
 	<variable name="AFERICAO2" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{AFERICAO}]]></variableExpression>
 	</variable>
-	<variable name="DIFERENCA2" class="java.math.BigDecimal" calculation="Sum">
+	<variable name="DIFERENCA3" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{DIFERENCA}]]></variableExpression>
 	</variable>
-	<group name="Group1">
-		<groupExpression><![CDATA[$F{COD_PRODUTO}]]></groupExpression>
+	<group name="produto">
+		<groupExpression><![CDATA[$F{DESC_PRODUTO}]]></groupExpression>
 		<groupHeader>
 			<band height="30">
 				<staticText>
-					<reportElement mode="Opaque" x="0" y="0" width="99" height="30" backcolor="#DCDCDC" uuid="7a612c1f-7bc8-4e79-b856-96bf724cb2f5">
+					<reportElement mode="Opaque" x="0" y="0" width="99" height="30" backcolor="#DCDCDC" uuid="6743a5a6-d58d-4c2e-b79a-792d9fba2481">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<box>
@@ -142,7 +159,7 @@ $P{PARAM_CD_EMPRESA},
 					<text><![CDATA[Produto:]]></text>
 				</staticText>
 				<textField>
-					<reportElement mode="Opaque" x="60" y="0" width="159" height="30" backcolor="#DCDCDC" uuid="fd2eadda-7e92-4d34-bdc8-8a79b527e2b2"/>
+					<reportElement mode="Opaque" x="60" y="0" width="159" height="30" backcolor="#DCDCDC" uuid="ff64a32b-56bb-4e15-b21d-19e1300e1dd5"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -155,7 +172,7 @@ $P{PARAM_CD_EMPRESA},
 					<textFieldExpression><![CDATA[$F{COD_PRODUTO}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement mode="Opaque" x="91" y="0" width="464" height="30" backcolor="#DCDCDC" uuid="cc5e592a-100f-49a6-89b3-bc6457e0ed97"/>
+					<reportElement mode="Opaque" x="91" y="0" width="464" height="30" backcolor="#DCDCDC" uuid="a5357291-376a-4011-b13f-75a1b3d11932"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -173,7 +190,7 @@ $P{PARAM_CD_EMPRESA},
 			<band height="35">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<textField textAdjust="ScaleFont">
-					<reportElement mode="Opaque" x="0" y="0" width="130" height="30" backcolor="#DCDCDC" uuid="f2031b94-7819-4d3c-a30b-3b10ef177938">
+					<reportElement mode="Opaque" x="0" y="0" width="130" height="30" backcolor="#DCDCDC" uuid="05855567-9b19-47cc-b420-92878869cb60">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="abbd4f05-5aaf-410f-b458-81c87e76c52d"/>
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
@@ -190,8 +207,8 @@ $P{PARAM_CD_EMPRESA},
 					</textElement>
 					<textFieldExpression><![CDATA["Total  " + $F{DESC_PRODUTO}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="ScaleFont" pattern=" #,##0.##; -#,##0.##">
-					<reportElement mode="Opaque" x="130" y="0" width="70" height="30" backcolor="#DCDCDC" uuid="6707f2d6-d484-43b4-bc27-f5263b5c260e"/>
+				<textField pattern=" #,##0.##; -#,##0.##">
+					<reportElement mode="Opaque" x="130" y="0" width="70" height="30" backcolor="#DCDCDC" uuid="bf5d94c1-afc5-4af6-9c6c-1bddfa2ef014"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -201,8 +218,8 @@ $P{PARAM_CD_EMPRESA},
 					<textElement textAlignment="Right" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[$V{VOLUME_RECEBIDO1}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-					<reportElement mode="Opaque" x="200" y="0" width="70" height="30" backcolor="#DCDCDC" uuid="b1c80edf-fe64-48ff-9603-9ca02d7718cd"/>
+				<textField pattern=" #,##0.00; -#,##0.00">
+					<reportElement mode="Opaque" x="200" y="0" width="69" height="30" backcolor="#DCDCDC" uuid="20cf6b87-f1d4-4e9c-872b-6ed4be75722e"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -210,10 +227,10 @@ $P{PARAM_CD_EMPRESA},
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA[$V{VOLUME_VENDIDO1}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$V{VOLUME_VENDIDO2}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-					<reportElement mode="Opaque" x="270" y="0" width="59" height="30" backcolor="#DCDCDC" uuid="2f5a2b64-349a-4ab9-9227-65ffd6b8ea22"/>
+				<textField pattern=" #,##0.00; -#,##0.00">
+					<reportElement mode="Opaque" x="269" y="0" width="60" height="30" backcolor="#DCDCDC" uuid="30a361c2-e99f-4ae8-b6a1-35c4877576d3"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -223,8 +240,114 @@ $P{PARAM_CD_EMPRESA},
 					<textElement textAlignment="Right" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[$V{AFERICAO1}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-					<reportElement mode="Opaque" x="482" y="0" width="73" height="30" backcolor="#DCDCDC" uuid="8eefb19a-b3f2-4965-9096-55b3504dd2a9"/>
+				<textField pattern=" #,##0.00; -#,##0.00">
+					<reportElement mode="Opaque" x="481" y="0" width="74" height="30" backcolor="#DCDCDC" uuid="cc148531-b488-4370-8842-c8f37b368647"/>
+					<box rightPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$V{DIFERENCA2}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="329" y="0" width="152" height="30" backcolor="#DCDCDC" uuid="56df3b08-3bf4-483e-b48d-acd4a5f3433b"/>
+				</rectangle>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="tanque">
+		<groupExpression><![CDATA[$F{num_tanque}]]></groupExpression>
+		<groupHeader>
+			<band height="30">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="99" height="30" backcolor="#DCDCDC" uuid="2b4f7ea6-e9ae-48af-b6c6-4737ea6cec80">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<text><![CDATA[Tanque: ]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="51" y="0" width="504" height="30" backcolor="#DCDCDC" uuid="8bd40112-3727-40e0-93cb-d9a81c361b46"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{num_tanque}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="35">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<textField pattern=" #,##0.##; -#,##0.##">
+					<reportElement mode="Opaque" x="130" y="0" width="70" height="30" backcolor="#DCDCDC" uuid="bff042a0-bb47-4b3b-a7b3-be93c9ff8690"/>
+					<box rightPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$V{VOLUME_RECEBIDO2}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="ScaleFont">
+					<reportElement mode="Opaque" x="0" y="0" width="130" height="30" backcolor="#DCDCDC" uuid="da8d50d6-df3a-47cf-a6b3-0bfb51f52752">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="abbd4f05-5aaf-410f-b458-81c87e76c52d"/>
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					</reportElement>
+					<box leftPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="11" isBold="true"/>
+						<paragraph leftIndent="0" rightIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Total tanque:  " + $F{num_tanque}]]></textFieldExpression>
+				</textField>
+				<textField pattern=" #,##0.00; -#,##0.00">
+					<reportElement mode="Opaque" x="200" y="0" width="69" height="30" backcolor="#DCDCDC" uuid="9a53b765-8fa4-49da-a835-9bf649223338"/>
+					<box rightPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$V{VOLUME_VENDIDO1}]]></textFieldExpression>
+				</textField>
+				<textField pattern=" #,##0.00; -#,##0.00">
+					<reportElement mode="Opaque" x="269" y="0" width="60" height="30" backcolor="#DCDCDC" uuid="434b5f40-4a08-4dba-8685-0804ab8a08e2"/>
+					<box rightPadding="5">
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{AFERICAO}]]></textFieldExpression>
+				</textField>
+				<textField pattern=" #,##0.00; -#,##0.00">
+					<reportElement mode="Opaque" x="481" y="0" width="74" height="30" backcolor="#DCDCDC" uuid="62320b4f-2299-4c53-8b87-e4b34213887d"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -235,7 +358,7 @@ $P{PARAM_CD_EMPRESA},
 					<textFieldExpression><![CDATA[$V{DIFERENCA1}]]></textFieldExpression>
 				</textField>
 				<rectangle>
-					<reportElement x="329" y="0" width="153" height="30" backcolor="#DCDCDC" uuid="e43223c1-be91-488e-8023-ca16f57cb560"/>
+					<reportElement x="329" y="0" width="152" height="30" backcolor="#DCDCDC" uuid="ca091d8c-9cae-4275-8b35-eec463222280"/>
 				</rectangle>
 			</band>
 		</groupFooter>
@@ -246,14 +369,14 @@ $P{PARAM_CD_EMPRESA},
 	<title>
 		<band height="28" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="555" height="28" uuid="38cee33f-409a-4313-b3b6-d561eeb7f92d"/>
+				<reportElement x="0" y="0" width="555" height="28" uuid="25045407-2871-4ea5-aa27-f046b91823ff"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Tahoma" size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Relatório: Extrato Movimento Combustíveis]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="0" width="555" height="28" uuid="65b872c4-62ea-481a-8542-6cd5e0270d2a"/>
+				<reportElement x="0" y="0" width="555" height="28" uuid="1f530997-595e-41c3-be52-c60a1e0e0f4a"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -271,7 +394,7 @@ $P{PARAM_CD_EMPRESA},
 		<band height="69" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
-				<reportElement x="0" y="0" width="283" height="30" uuid="bb8409cf-45d9-4d8b-946e-732449a19f44"/>
+				<reportElement x="0" y="0" width="283" height="30" uuid="21b285d7-03c8-4fea-842f-260146d06e2d"/>
 				<box padding="5"/>
 				<textElement verticalAlignment="Bottom">
 					<font size="11"/>
@@ -279,7 +402,7 @@ $P{PARAM_CD_EMPRESA},
 				<textFieldExpression><![CDATA["Empresa: " + $P{PARAM_NM_EMPRESA}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="0" width="555" height="60" uuid="afd2a8dc-10d1-4fce-9077-3f83cde259da"/>
+				<reportElement x="0" y="0" width="555" height="60" uuid="92435c16-7820-448e-8da7-b2d5c4b32e47"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -290,7 +413,7 @@ $P{PARAM_CD_EMPRESA},
 				<text><![CDATA[]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="0" y="30" width="283" height="30" uuid="cd52f80e-06c3-492a-9751-9b8b178cb6fd"/>
+				<reportElement x="0" y="30" width="219" height="30" uuid="e7503ad5-8b85-4b31-95d0-01bb4b84975f"/>
 				<box padding="5"/>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font size="11"/>
@@ -298,7 +421,7 @@ $P{PARAM_CD_EMPRESA},
 				<textFieldExpression><![CDATA["Período: " + $P{PARAM_DT_INICIO_FMT} + " - " + $P{PARAM_DT_FIM_FMT}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="471" y="0" width="83" height="30" uuid="db53df70-3a85-4970-80dd-dcfc3dd15259"/>
+				<reportElement x="471" y="0" width="83" height="30" uuid="eab2589f-9683-4231-8a3f-614ed0f7d867"/>
 				<box topPadding="4" rightPadding="5"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="11"/>
@@ -306,36 +429,42 @@ $P{PARAM_CD_EMPRESA},
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="382" y="0" width="123" height="30" uuid="9431982c-8dad-45a5-82a8-afa3153c49b0"/>
+				<reportElement x="390" y="0" width="123" height="30" uuid="401fe110-0802-4f91-b6f4-c43f624b859e"/>
 				<box topPadding="4" rightPadding="5"/>
 				<textElement verticalAlignment="Middle">
 					<font size="11"/>
 				</textElement>
 				<text><![CDATA[Relatório gerado em: ]]></text>
 			</staticText>
-			<textField evaluationTime="Report">
-				<reportElement x="509" y="30" width="43" height="30" uuid="250823e9-f905-479d-b4f0-4db83314520b"/>
-				<box leftPadding="15" bottomPadding="5"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font size="11"/>
-				</textElement>
-				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
-			</textField>
 			<textField>
-				<reportElement x="450" y="30" width="73" height="30" uuid="52f93cda-e370-45c2-b284-fef2acccbae9"/>
+				<reportElement x="443" y="30" width="73" height="30" uuid="f6abf7bc-eb38-4163-bf86-c393e10d4675"/>
 				<box leftPadding="10" bottomPadding="5"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Página: " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="501" y="30" width="46" height="30" uuid="ca122e22-f34e-4442-b777-b16684b39219"/>
+				<box leftPadding="15" bottomPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="249" y="35" width="100" height="20" uuid="e87859ea-6330-40f2-883c-d316f4eaee47"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Tipo: Tanque]]></text>
+			</staticText>
 		</band>
 	</pageHeader>
 	<columnHeader>
 		<band height="30" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<staticText>
-				<reportElement style="cabecalho_detail" x="0" y="0" width="60" height="30" uuid="8446dcaf-a335-4082-9932-5ec0fbda7654">
+				<reportElement style="cabecalho_detail" x="0" y="0" width="60" height="30" uuid="802e6688-8180-49fc-ab5d-ba74cf222085">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="331d15f4-ba3e-40fa-b504-623b32fe785f"/>
 				</reportElement>
 				<box>
@@ -350,7 +479,7 @@ $P{PARAM_CD_EMPRESA},
 				<text><![CDATA[Data]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="cabecalho_detail" x="60" y="0" width="70" height="30" uuid="7f7d4f57-3293-48f1-8b9e-d417f341a248">
+				<reportElement style="cabecalho_detail" x="60" y="0" width="70" height="30" uuid="c9741188-6855-49c6-957e-d6f5a3322656">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0244ed52-aafe-4dd2-b365-01930d1de8a8"/>
 				</reportElement>
 				<box>
@@ -365,7 +494,7 @@ $P{PARAM_CD_EMPRESA},
 				<text><![CDATA[Estoque Inicial]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="cabecalho_detail" x="130" y="0" width="70" height="30" uuid="1d3cade7-da6f-409b-822c-9c50f9a78b1f">
+				<reportElement style="cabecalho_detail" x="130" y="0" width="70" height="30" uuid="41d401f2-896c-44c0-9941-ad35455436d6">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2925072a-1b12-4ee7-983f-69890b793075"/>
 				</reportElement>
 				<box>
@@ -380,7 +509,7 @@ $P{PARAM_CD_EMPRESA},
 				<text><![CDATA[Entrada]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="cabecalho_detail" x="270" y="0" width="59" height="30" uuid="9f657385-f857-4b98-9b99-f6629f2c0b96">
+				<reportElement style="cabecalho_detail" x="270" y="0" width="59" height="30" uuid="aac69561-7c23-4fc5-861e-bbdd3ce06568">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fa355b38-7e44-49f7-a4b8-d05ce6b7f1e6"/>
 				</reportElement>
 				<box>
@@ -395,7 +524,7 @@ $P{PARAM_CD_EMPRESA},
 				<text><![CDATA[Aferição]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="cabecalho_detail" x="329" y="0" width="83" height="30" uuid="0bed1d36-f1c3-43b6-bc02-0e80c9741a06">
+				<reportElement style="cabecalho_detail" x="329" y="0" width="83" height="30" uuid="4720231e-9424-4084-864a-98fb5130b20b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6d5a9f47-c374-4151-aed0-9ca3f9a55dc6"/>
 				</reportElement>
 				<box>
@@ -410,7 +539,7 @@ $P{PARAM_CD_EMPRESA},
 				<text><![CDATA[Estoque Contabil]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="cabecalho_detail" x="412" y="0" width="70" height="30" uuid="1bffb25d-07a3-418b-886e-5ec66292b261">
+				<reportElement style="cabecalho_detail" x="412" y="0" width="70" height="30" uuid="556f31ea-7331-494f-835e-412f961991b8">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18db333d-8226-42bf-99e5-e5063cc3af38"/>
 				</reportElement>
 				<box>
@@ -425,7 +554,7 @@ $P{PARAM_CD_EMPRESA},
 				<text><![CDATA[Estoque Fisico ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="cabecalho_detail" x="482" y="0" width="73" height="30" uuid="5f7cfcad-4516-4e50-8098-0e57ed2579a9">
+				<reportElement style="cabecalho_detail" x="482" y="0" width="73" height="30" uuid="f23660b1-2eec-4a32-9d9f-227dbf03225e">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fa730e46-8c76-4480-b1ee-ecf046919fae"/>
 				</reportElement>
 				<box>
@@ -440,7 +569,7 @@ $P{PARAM_CD_EMPRESA},
 				<text><![CDATA[Diferença]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="cabecalho_detail" x="200" y="0" width="70" height="30" uuid="052b6a64-bc9a-4f7e-9156-abfd11b4c265">
+				<reportElement style="cabecalho_detail" x="200" y="0" width="70" height="30" uuid="9811d941-c6f6-44bc-aba4-bb46db4d006e">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fa355b38-7e44-49f7-a4b8-d05ce6b7f1e6"/>
 				</reportElement>
 				<box>
@@ -458,9 +587,22 @@ $P{PARAM_CD_EMPRESA},
 	</columnHeader>
 	<detail>
 		<band height="30" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="0" width="60" height="30" uuid="40899b01-631c-43c0-9740-9f7ea04d22e9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f8a4f6f9-e349-4cd3-b76c-8b9c08052dd9"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{data_fechamento}]]></textFieldExpression>
+			</textField>
 			<textField pattern=" #,##0.##; -#,##0.##">
-				<reportElement x="60" y="0" width="70" height="30" uuid="84248303-8b4e-432c-ab98-7dd58bc03ccb">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="623013d1-2840-4e2d-8c79-b1c62d65395e"/>
+				<reportElement x="60" y="0" width="70" height="30" uuid="da98c047-bb89-4849-b3dd-c15a2a79c7b4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="32c94a7d-7c4a-4e8c-a1a6-3e68f6ec7cf4"/>
 				</reportElement>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -468,14 +610,12 @@ $P{PARAM_CD_EMPRESA},
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="10"/>
-				</textElement>
+				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$F{ESTOQ_ABERTURA}]]></textFieldExpression>
 			</textField>
 			<textField pattern=" #,##0.##; -#,##0.##">
-				<reportElement x="130" y="0" width="70" height="30" uuid="e8253a90-f7b3-4823-9f7f-f14f964b4b51">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1446d38d-a32c-4b4c-ab8c-affcc6a31021"/>
+				<reportElement x="130" y="0" width="70" height="30" uuid="73b2c90e-c42b-48ab-bb26-5ff6f7db9f79">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="97bc2360-3a1a-4c76-8214-6c2390aa1ce2"/>
 				</reportElement>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -483,14 +623,12 @@ $P{PARAM_CD_EMPRESA},
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="10"/>
-				</textElement>
+				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$F{VOLUME_RECEBIDO}]]></textFieldExpression>
 			</textField>
 			<textField pattern=" #,##0.00; -#,##0.00">
-				<reportElement x="200" y="0" width="70" height="30" uuid="6a6f33b4-631e-4211-8eab-dc00b651fe4d">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f287df45-c5d8-4066-8ddb-e4333fe1e515"/>
+				<reportElement x="200" y="0" width="69" height="30" uuid="8b53db6a-890e-4f50-a216-107df34015f8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="01b812e0-2a7f-49e6-a938-2eaba490feca"/>
 				</reportElement>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -498,14 +636,12 @@ $P{PARAM_CD_EMPRESA},
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="10"/>
-				</textElement>
+				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$F{VOLUME_VENDIDO}]]></textFieldExpression>
 			</textField>
 			<textField pattern=" #,##0.00; -#,##0.00">
-				<reportElement x="270" y="0" width="59" height="30" uuid="8fd9fbe5-3533-4f32-9329-04f3f83cdcfe">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1e6d172f-3018-4188-a849-36d5cecce13b"/>
+				<reportElement x="269" y="0" width="60" height="30" uuid="4260486b-535c-4322-b998-a40b513b85e2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="39d4821c-aed4-467c-b83f-53bb70880fb5"/>
 				</reportElement>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -513,14 +649,12 @@ $P{PARAM_CD_EMPRESA},
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="10"/>
-				</textElement>
+				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$F{AFERICAO}]]></textFieldExpression>
 			</textField>
-			<textField pattern=" #,##0.00; -#,##0.00">
-				<reportElement x="482" y="0" width="73" height="30" uuid="df8aa330-6cdc-4098-b211-f96375338110">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="03d92754-b49d-4df5-b466-7f52019a7987"/>
+			<textField pattern=" #,##0.##; -#,##0.##">
+				<reportElement x="329" y="0" width="83" height="30" uuid="62b36c5f-a7fc-4bf7-bc2b-5da4af55d590">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="74d5ebea-4389-40c0-a22c-ec9e83d4f514"/>
 				</reportElement>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -528,14 +662,12 @@ $P{PARAM_CD_EMPRESA},
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="10"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{DIFERENCA}]]></textFieldExpression>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{ESTOQ_FECHAMENTO}]]></textFieldExpression>
 			</textField>
-			<textField pattern=" #,##0.00; -#,##0.00">
-				<reportElement x="412" y="0" width="70" height="30" uuid="1f6de01a-094f-43a7-b735-163d28fa6f04">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="12315d29-b3e0-45f0-b9db-80de967f0624"/>
+			<textField pattern=" #,##0.##; -#,##0.##">
+				<reportElement x="412" y="0" width="69" height="30" uuid="26e72982-95ee-4781-8278-b0be97fcdfe1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4a8e40c9-c3cd-4841-b553-11489db03e76"/>
 				</reportElement>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -543,14 +675,12 @@ $P{PARAM_CD_EMPRESA},
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="10"/>
-				</textElement>
+				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$F{ESTOQ_FISICO}]]></textFieldExpression>
 			</textField>
 			<textField pattern=" #,##0.00; -#,##0.00">
-				<reportElement x="329" y="0" width="83" height="30" uuid="14179eea-0f7e-4b92-bf1a-142a9c33205b">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="19d30fcc-b6fb-46dc-abc7-6a0658fe661e"/>
+				<reportElement x="481" y="0" width="74" height="30" uuid="c6bb329f-3373-4757-a897-b187eba75873">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="00ac106b-710f-413e-b907-204fbf0b543b"/>
 				</reportElement>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -558,32 +688,15 @@ $P{PARAM_CD_EMPRESA},
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="10"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{ESTOQ_FECHAMENTO}]]></textFieldExpression>
-			</textField>
-			<textField pattern="dd/MM/yyyy">
-				<reportElement x="0" y="0" width="60" height="30" uuid="8f917b9a-a77a-43e1-a30e-18c26f85ab73">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b2927a89-30ef-4421-a5b1-52c941d9370b"/>
-				</reportElement>
-				<box rightPadding="5">
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="10"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{data_fechamento}]]></textFieldExpression>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{DIFERENCA}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<summary>
-		<band height="30" splitType="Stretch">
+		<band height="45" splitType="Stretch">
 			<textField>
-				<reportElement mode="Opaque" x="0" y="0" width="130" height="30" forecolor="#030303" backcolor="#C9C9C9" uuid="e648fbe6-fcbe-499f-88bd-c6ba3a2a2894">
+				<reportElement style="cabecalho_detail" mode="Opaque" x="0" y="0" width="130" height="30" forecolor="#030303" backcolor="#C9C9C9" uuid="e7f11941-c7b6-4560-bf43-03d048949496">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="abbd4f05-5aaf-410f-b458-81c87e76c52d"/>
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
@@ -601,51 +714,51 @@ $P{PARAM_CD_EMPRESA},
 				<textFieldExpression><![CDATA["Total Geral "]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" pattern=" #,##0.##; -#,##0.##">
-				<reportElement style="cabecalho_detail" mode="Opaque" x="130" y="0" width="70" height="30" uuid="574809f6-a8cb-4ac4-b921-81e39af11ddd"/>
+				<reportElement style="cabecalho_detail" x="130" y="0" width="70" height="30" uuid="54c635dd-f5b2-468b-8271-e468da4aa9ea"/>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{VOLUME_RECEBIDO2}]]></textFieldExpression>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{VOLUME_RECEBIDO3}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-				<reportElement style="cabecalho_detail" mode="Opaque" x="200" y="0" width="70" height="30" uuid="92d7319e-bf14-4b9b-8786-d74a0c010a27"/>
+				<reportElement style="cabecalho_detail" x="200" y="0" width="70" height="30" uuid="cbf0c89c-e0ef-4f23-8d8f-efca253ee847"/>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{VOLUME_VENDIDO2}]]></textFieldExpression>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{VOLUME_VENDIDO3}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-				<reportElement style="cabecalho_detail" mode="Opaque" x="270" y="0" width="59" height="30" uuid="096072a2-260d-4317-b7ee-da0bc13e7574"/>
+				<reportElement style="cabecalho_detail" x="270" y="0" width="59" height="30" uuid="a9307a89-f811-4748-8527-bcc125ea84ce"/>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$V{AFERICAO2}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-				<reportElement style="cabecalho_detail" mode="Opaque" x="481" y="0" width="74" height="30" uuid="e168cc41-7a05-4178-beb8-7712df89d87a"/>
+				<reportElement style="cabecalho_detail" x="481" y="0" width="74" height="30" backcolor="#C9C9C9" uuid="ee47e759-0491-4be6-a800-9c9ac6b74050"/>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{DIFERENCA2}]]></textFieldExpression>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{DIFERENCA3}]]></textFieldExpression>
 			</textField>
 			<rectangle>
-				<reportElement x="329" y="0" width="152" height="30" backcolor="#C9C9C9" uuid="d94218d5-2d2d-4f46-8ed5-431bb0bda42d"/>
+				<reportElement x="329" y="0" width="152" height="30" backcolor="#C9C9C9" uuid="3a1791e7-88a8-48b0-b3a3-18c40a643754"/>
 			</rectangle>
 		</band>
 	</summary>

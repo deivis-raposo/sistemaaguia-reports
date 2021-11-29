@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_Venda_Produtos_Sintetico" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="1f5d7294-cbd1-43e3-9beb-d5068e0b89e2">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DB_Aguia"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
@@ -127,7 +127,7 @@ $P{PARAM_CD_EMPRESA},
 				<text><![CDATA[]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="0" y="30" width="283" height="30" uuid="7863e0ab-75a6-41c7-8b78-0688973b5f64"/>
+				<reportElement x="0" y="30" width="210" height="30" uuid="7863e0ab-75a6-41c7-8b78-0688973b5f64"/>
 				<box padding="5"/>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font size="11"/>
@@ -166,6 +166,13 @@ $P{PARAM_CD_EMPRESA},
 				</textElement>
 				<textFieldExpression><![CDATA["Página: " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="249" y="35" width="100" height="20" uuid="88ec5090-d00d-4c87-8edd-9e94f857e78f"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Tipo: Sintético]]></text>
+			</staticText>
 		</band>
 	</pageHeader>
 	<columnHeader>
