@@ -210,7 +210,7 @@
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font size="9"/>
+						<font size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{quantidade1}]]></textFieldExpression>
 				</textField>
@@ -223,7 +223,7 @@
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font size="9"/>
+						<font size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{total1}]]></textFieldExpression>
 				</textField>
@@ -235,7 +235,9 @@
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$V{valor_desconto1}]]></textFieldExpression>
 				</textField>
 				<textField pattern=" #,##0.00; -#,##0.00">
@@ -246,7 +248,9 @@
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$V{valor_liquido1}]]></textFieldExpression>
 				</textField>
 				<textField>
@@ -257,7 +261,9 @@
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$V{valor_acrescimo2}]]></textFieldExpression>
 				</textField>
 				<rectangle>
@@ -711,7 +717,7 @@
 		</band>
 	</detail>
 	<summary>
-		<band height="63" splitType="Stretch">
+		<band height="30" splitType="Stretch">
 			<textField>
 				<reportElement style="cabecalho_detail" mode="Opaque" x="0" y="0" width="309" height="30" forecolor="#030303" backcolor="#C9C9C9" uuid="90f4dbec-832a-4a0a-9d8d-5265301e6dda">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="abbd4f05-5aaf-410f-b458-81c87e76c52d"/>
@@ -739,7 +745,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Top">
-					<font size="9"/>
+					<font size="9" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{quantidade2}]]></textFieldExpression>
 			</textField>
@@ -752,7 +758,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="9"/>
+					<font size="9" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{total2}]]></textFieldExpression>
 			</textField>
@@ -764,7 +770,9 @@
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{valor_desconto2}]]></textFieldExpression>
 			</textField>
 			<textField pattern=" #,##0.00; -#,##0.00">
@@ -775,7 +783,9 @@
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{valor_acrescimo3}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
@@ -786,7 +796,9 @@
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{valor_liquido2}]]></textFieldExpression>
 			</textField>
 			<rectangle>

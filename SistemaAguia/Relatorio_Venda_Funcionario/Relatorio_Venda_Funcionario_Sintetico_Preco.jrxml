@@ -202,7 +202,9 @@ $P{PARAM_FUNCIONARIO} ,
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$V{quantidade1}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
@@ -213,29 +215,35 @@ $P{PARAM_FUNCIONARIO} ,
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$V{valor_bruto1}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-					<reportElement mode="Opaque" x="440" y="0" width="40" height="30" backcolor="#DCDCDC" uuid="a1e69db9-503e-4be4-989b-abc1c66c416d"/>
+					<reportElement mode="Opaque" x="442" y="0" width="38" height="30" backcolor="#DCDCDC" uuid="a1e69db9-503e-4be4-989b-abc1c66c416d"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$V{valor_acrescimo1}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-					<reportElement mode="Opaque" x="400" y="0" width="40" height="30" backcolor="#DCDCDC" uuid="e5d701c2-ffdf-45b0-8f19-a026d9abe51e"/>
+					<reportElement mode="Opaque" x="400" y="0" width="42" height="30" backcolor="#DCDCDC" uuid="e5d701c2-ffdf-45b0-8f19-a026d9abe51e"/>
 					<box rightPadding="5">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$V{valor_Desconto1}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
@@ -246,7 +254,9 @@ $P{PARAM_FUNCIONARIO} ,
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$V{valor_liquido1}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont">
@@ -275,7 +285,7 @@ $P{PARAM_FUNCIONARIO} ,
 	</group>
 	<group name="Group2">
 		<groupFooter>
-			<band height="72">
+			<band height="30">
 				<textField pattern=" #,##0.00; -#,##0.00">
 					<reportElement x="195" y="0" width="75" height="30" uuid="617bb75d-edc5-4445-b99a-8f32e6f4a46b"/>
 					<box rightPadding="5">
@@ -582,7 +592,7 @@ $P{PARAM_FUNCIONARIO} ,
 		</band>
 	</columnHeader>
 	<summary>
-		<band height="217" splitType="Stretch">
+		<band height="100" splitType="Stretch">
 			<textField pattern=" #,##0.00; -#,##0.00">
 				<reportElement mode="Opaque" x="195" y="0" width="75" height="30" backcolor="#C9C9C9" uuid="13feb0cb-9fd5-496e-bd08-b487296fae30"/>
 				<box rightPadding="5">
@@ -591,7 +601,9 @@ $P{PARAM_FUNCIONARIO} ,
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{quantidade2}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
@@ -602,29 +614,35 @@ $P{PARAM_FUNCIONARIO} ,
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{valor_bruto2}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-				<reportElement mode="Opaque" x="440" y="0" width="40" height="30" backcolor="#C9C9C9" uuid="4dab586e-30e0-48e5-8115-0d17476a932a"/>
+				<reportElement mode="Opaque" x="442" y="0" width="38" height="30" backcolor="#C9C9C9" uuid="4dab586e-30e0-48e5-8115-0d17476a932a"/>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{valor_acrescimo2}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
-				<reportElement mode="Opaque" x="400" y="0" width="40" height="30" backcolor="#C9C9C9" uuid="b7c9dad8-cfea-4a27-8c64-14d87f3eecb7"/>
+				<reportElement mode="Opaque" x="400" y="0" width="42" height="30" backcolor="#C9C9C9" uuid="b7c9dad8-cfea-4a27-8c64-14d87f3eecb7"/>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{valor_Desconto2}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" pattern=" #,##0.00; -#,##0.00">
@@ -635,7 +653,9 @@ $P{PARAM_FUNCIONARIO} ,
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{valor_liquido2}]]></textFieldExpression>
 			</textField>
 			<textField>

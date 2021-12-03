@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_Venda_Funcionario_Sin_Pre_Sub" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6bca96-e99e-4caf-8ea4-8221129c7f82">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_Venda_Funcionario_Sin_Pre_Sub" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2f6bca96-e99e-4caf-8ea4-8221129c7f82">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DB_Aguia.xml"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<parameter name="PARAM_CD_EMPRESA" class="java.lang.Integer"/>
 	<parameter name="PARAM_DT_INICIO" class="java.lang.String">
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
@@ -18,7 +27,7 @@
  $P{PARAM_CD_EMPRESA} ,
  $P{PARAM_FUNCIONARIO},
  $P{PARAM_DT_INICIO},
- $P{PARAM_DT_FIM} ]]>
+ $P{PARAM_DT_FIM}]]>
 	</queryString>
 	<field name="cod_empresa" class="java.lang.Short">
 		<property name="com.jaspersoft.studio.field.name" value="cod_empresa"/>
@@ -62,92 +71,113 @@
 	<detail>
 		<band height="30" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="72" height="30" uuid="e956d3de-8857-4fbb-9c63-0550f9fa46e0"/>
+				<reportElement x="0" y="0" width="40" height="30" uuid="e956d3de-8857-4fbb-9c63-0550f9fa46e0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{id_tipo_preco}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="72" y="0" width="69" height="30" uuid="57a7562a-79a9-431b-98cc-2f8d73f1a32d"/>
-				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0">
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{descricao_tipo_preco}]]></textFieldExpression>
-			</textField>
 			<textField pattern=" #,##0.00; -#,##0.00">
-				<reportElement x="141" y="0" width="69" height="30" uuid="511b0e1d-f2ce-4a6e-9688-97c453a7aceb"/>
-				<box>
+				<reportElement x="195" y="0" width="75" height="30" uuid="511b0e1d-f2ce-4a6e-9688-97c453a7aceb">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{quantidade}]]></textFieldExpression>
 			</textField>
 			<textField pattern=" #,##0.00; -#,##0.00">
-				<reportElement x="210" y="0" width="69" height="30" uuid="06e637c3-c0cc-4789-a1a4-ec23a546be01"/>
+				<reportElement x="325" y="0" width="75" height="30" uuid="06e637c3-c0cc-4789-a1a4-ec23a546be01">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{valor_bruto}]]></textFieldExpression>
 			</textField>
 			<textField pattern=" #,##0.000; -#,##0.000">
-				<reportElement x="279" y="0" width="69" height="30" uuid="bfb99874-b413-4bc5-810d-124230f068ad"/>
+				<reportElement x="270" y="0" width="55" height="30" uuid="bfb99874-b413-4bc5-810d-124230f068ad">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{preco_venda}]]></textFieldExpression>
 			</textField>
 			<textField pattern=" #,##0.00; -#,##0.00">
-				<reportElement x="348" y="0" width="69" height="30" uuid="fb637772-5ea3-4389-bb9e-950b85dea324"/>
+				<reportElement x="400" y="0" width="42" height="30" uuid="fb637772-5ea3-4389-bb9e-950b85dea324">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{valor_acrescimo}]]></textFieldExpression>
 			</textField>
 			<textField pattern=" #,##0.00; -#,##0.00">
-				<reportElement x="417" y="0" width="69" height="30" uuid="c429bd7c-bfb4-4ce6-9591-a6b8973ef933"/>
+				<reportElement x="442" y="0" width="38" height="30" uuid="c429bd7c-bfb4-4ce6-9591-a6b8973ef933">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{valor_Desconto}]]></textFieldExpression>
 			</textField>
 			<textField pattern=" #,##0.00; -#,##0.00">
-				<reportElement x="486" y="0" width="69" height="30" uuid="9af809db-0fe8-4511-995f-4bc711f047dc"/>
+				<reportElement x="480" y="0" width="75" height="30" uuid="9af809db-0fe8-4511-995f-4bc711f047dc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box rightPadding="5">
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{valor_liquido}]]></textFieldExpression>
 			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="40" y="0" width="155" height="30" backcolor="#DCDCDC" uuid="679de104-c758-40dd-a6e6-883cfa67c31a"/>
+			</rectangle>
 		</band>
 	</detail>
 </jasperReport>
